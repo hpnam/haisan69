@@ -116,7 +116,7 @@ simpleCart({
  });
 });
 
-$(document).ready(function($){
+$(document).ready(function(){
     $("#fb-box .fb-button").click(function(){
         if($("#fb-box .fb-button").hasClass("active")) {
             $("#fb-box .fb-button").removeClass("active");
@@ -125,51 +125,6 @@ $(document).ready(function($){
             $("#fb-box .fb-button").addClass("active");
             $("#fb-box .fb-page").animate({left: '0px'});
         }
-    });
-
-    $("#ContactForm1_contact-form-checkout").click(function(event) {
-        data_name = document.getElementById("ContactForm1_contact-form-name").value.trim();
-        data_phone = document.getElementById("ContactForm1_contact-form-phone").value.trim();
-        data_address = document.getElementById("ContactForm1_contact-form-address").value.trim();
-        data_message = document.getElementById("ContactForm1_contact-form-note").value;
-        if(data_phone.length == 0) {
-            document.getElementById("ContactForm1_contact-form-error-alert").innerHTML = "Quý khách vui lòng điền số điện thoại liên hệ.";
-            event.preventDefault();
-            return;
-        }
-        if(data_address.length == 0) {
-            document.getElementById("ContactForm1_contact-form-error-alert").innerHTML = "Quý khách vui lòng điền địa chỉ giao hàng.";
-            event.preventDefault();
-            return;
-        }
-        if(simpleCart.total() == 0) {
-            document.getElementById("ContactForm1_contact-form-error-alert").innerHTML = "Giỏ hàng hiện chưa có sản phẩm nào, Quý khách vui lòng thêm sản phẩm trước khi thanh toán.";
-            event.preventDefault();
-            return;
-        }
-        emailBody = "";
-        emailBody += "KHÁCH HÀNG: \n - Name: ";
-        emailBody += data_name;
-        emailBody += "\n - Phone: ";
-        emailBody += data_phone;
-        emailBody += "\n - Address: ";
-        emailBody += data_address;
-        emailBody += "\n - Note: ";
-        emailBody += data_message;
-        emailBody += "\n\nĐƠN HÀNG:";
-        simpleCart.each(function( item , x ){
-            itemInfo = "\n- [" + item.get("name").trim() + "]\t" + item.get("price").toLocaleString() + "\tx\t" + item.get("quantity") + "\t=\t" + item.get("total").toLocaleString();
-            emailBody += itemInfo;
-        });
-
-        emailBody += "\n\nTOTAL: ";
-        emailBody += simpleCart.total().toLocaleString();
-
-        //alert(emailBody);
-
-        $("#ContactForm1_contact-form-email-message").val(emailBody);
-        $("#ContactForm1_contact-form-submit").click();
-        window.location.replace("http://www.haisan69.com/thanks/");
     });
 });
 
@@ -217,7 +172,7 @@ $(document).ready(function() {
     });
 })
 
-    var _0x8897=["/checkout","indexOf","href","location","title","Đặt hàng","<div class='contact_billing_templateism'><h2>ĐẶT HÀNG:</h2><p class='infos'>Quý khách vui lòng điền các thông tin bên dưới</p> <div class='form'> <form name='contact-form' id='checkoutForm'><input class='contact-form-email' id='ContactForm1_contact-form-email' name='email' size='30' style='display: none;' type='text' value='checkout@haisan69.com'><textarea style='display: none;' id='ContactForm1_contact-form-email-message' name='email-message' class='contact-form-email'></textarea><input style='display: none;' id='ContactForm1_contact-form-submit' type='button' value='Submit'><p>Tên người nhận <br> <input class='name_billing_templateism' id='ContactForm1_contact-form-name' name='name' size='30' type='text' value=''> </p><p> Số điện thoại liên hệ <span style='font-weight: bolder;'>*</span> <br> <input class='phone_billing_templateism' id='ContactForm1_contact-form-phone' name='phone' size='30' type='text' value=''> </p><p> Địa chỉ giao hàng <span style='font-weight: bolder;'>*</span> <br> <input class='address_billing_templateism' id='ContactForm1_contact-form-address' name='address' size='30' type='text' value=''> </p><p>Ghi chú<br> <textarea class='details_billing_templateism' cols='25' id='ContactForm1_contact-form-note' name='email-note' rows='5'></textarea></p> <div class='simpleCart_items'/> Bạn đang có <span class='simpleCart_quantity'/> sản phẩm trong giỏ hàng.</br> <span class='simpleCart_total'/> <a class='simpleCart_checkout_break' href='javascript:;'><input class='submit_billing_templateism' id='ContactForm1_contact-form-checkout' type='button' value='Đặt hàng'></a> <p id='ContactForm1_contact-form-error-alert'></p> </form> </div> </div><style>div#Blog1 { display: none; }</style>","html","#main-wrapper","/cart","Giỏ hàng","<div class='menu-cart check'><div class='bag'><h2>Giỏ hàng:</h2><p class='itemscart'> Bạn đang có <span class='simpleCart_quantity'/> sản phẩm trong giỏ hàng. </p><div class='simpleCart_items'/><p class='mycart'><span class='simpleCart_total'/></p>  <div class='clear'/><a class='simpleCart_checkout' href='/checkout/'>Đặt hàng</a></div></div><style>div#Blog1 { display: none; }</style>"];
+    var _0x8897=["/checkout","indexOf","href","location","title","Đặt hàng","<div class='contact_billing_templateism'><h2>ĐẶT HÀNG:</h2><p class='infos'>Quý khách vui lòng điền các thông tin bên dưới</p> <div class='form'> <form name='contact-form' id='checkoutForm'><input class='contact-form-email' id='checkoutForm-email' name='email' size='30' style='display: none;' type='text' value='checkout@haisan69.com'><p>Tên người nhận <br> <input class='name_billing_templateism' id='checkoutForm-name' name='name' size='30' type='text' value=''> </p><p> Số điện thoại liên hệ <span style='font-weight: bolder;'>*</span> <br> <input class='phone_billing_templateism' id='checkoutForm-phone' name='phone' size='30' type='text' value=''> </p><p> Địa chỉ giao hàng <span style='font-weight: bolder;'>*</span> <br> <input class='address_billing_templateism' id='checkoutForm-address' name='address' size='30' type='text' value=''> </p><p>Ghi chú<br> <textarea class='details_billing_templateism' cols='25' id='checkoutForm-note' name='email-note' rows='5'></textarea></p> <div class='simpleCart_items'/> Bạn đang có <span class='simpleCart_quantity'/> sản phẩm trong giỏ hàng.</br> <span class='simpleCart_total'/> <a class='simpleCart_checkout_break' href='javascript:;'><input class='submit_billing_templateism' id='checkoutForm-checkout' type='button' value='Đặt hàng'></a> <p id='ContactForm1_contact-form-error-alert'></p> </form> </div> </div><style>div#Blog1 { display: none; }</style>","html","#main-wrapper","/cart","Giỏ hàng","<div class='menu-cart check'><div class='bag'><h2>Giỏ hàng:</h2><p class='itemscart'> Bạn đang có <span class='simpleCart_quantity'/> sản phẩm trong giỏ hàng. </p><div class='simpleCart_items'/><p class='mycart'><span class='simpleCart_total'/></p>  <div class='clear'/><a class='simpleCart_checkout' href='/checkout/'>Đặt hàng</a></div></div><style>div#Blog1 { display: none; }</style>"];
 
 $(document).ready(function(){
     if(window[_0x8897[3]][_0x8897[2]][_0x8897[1]](_0x8897[0])> -1){
@@ -228,6 +183,53 @@ $(document).ready(function(){
         document[_0x8897[4]]=_0x8897[10];
         $(_0x8897[8])[_0x8897[7]](_0x8897[11]);
     };
+
+    $("#checkoutForm-checkout").click(function(event) {
+        data_email = document.getElementById("checkoutForm-email").value.trim();
+        data_name = document.getElementById("checkoutForm-name").value.trim();
+        data_phone = document.getElementById("checkoutForm-phone").value.trim();
+        data_address = document.getElementById("checkoutForm-address").value.trim();
+        data_message = document.getElementById("checkoutForm-note").value;
+        if(data_phone.length == 0) {
+            document.getElementById("ContactForm1_contact-form-error-alert").innerHTML = "Quý khách vui lòng điền số điện thoại liên hệ.";
+            event.preventDefault();
+            return;
+        }
+        if(data_address.length == 0) {
+            document.getElementById("ContactForm1_contact-form-error-alert").innerHTML = "Quý khách vui lòng điền địa chỉ giao hàng.";
+            event.preventDefault();
+            return;
+        }
+        if(simpleCart.total() == 0) {
+            document.getElementById("ContactForm1_contact-form-error-alert").innerHTML = "Giỏ hàng hiện chưa có sản phẩm nào, Quý khách vui lòng thêm sản phẩm trước khi thanh toán.";
+            event.preventDefault();
+            return;
+        }
+        emailBody = "";
+        emailBody += "KHÁCH HÀNG: \n - Name: ";
+        emailBody += data_name;
+        emailBody += "\n - Phone: ";
+        emailBody += data_phone;
+        emailBody += "\n - Address: ";
+        emailBody += data_address;
+        emailBody += "\n - Note: ";
+        emailBody += data_message;
+        emailBody += "\n\nĐƠN HÀNG:";
+        simpleCart.each(function( item , x ){
+            itemInfo = "\n- [" + item.get("name").trim() + "]\t" + item.get("price").toLocaleString() + "\tx\t" + item.get("quantity") + "\t=\t" + item.get("total").toLocaleString();
+            emailBody += itemInfo;
+        });
+
+        emailBody += "\n\nTOTAL: ";
+        emailBody += simpleCart.total().toLocaleString();
+
+        //alert(emailBody);
+        $("#ContactForm2_contact-form-name").val(data_name);
+        $("#ContactForm2_contact-form-email").val(data_email);
+        $("#ContactForm2_contact-form-email-message").val(emailBody);
+        $("#ContactForm2_contact-form-submit").click();
+        window.location.replace("http://www.haisan69.com/thanks/");
+    });
 });
     var _0x8898=["/thanks","indexOf","href","location","title","Thanks","<div class='contact_billing_templateism'><h2>ĐẶT HÀNG THÀNH CÔNG!</h2><p class='infos'>Cám ơn quý khách đã ủng hộ, chúng tôi sẽ sớm liên hệ lại theo số điện thoại quý khách đã cung cấp để xác nhận đơn hàng.</p><p><a href='/'>Về trang chủ</a></p></div>","html","#main-wrapper"];
 
