@@ -60,6 +60,16 @@ jQuery(document).ready(function($){
     e.async = true; 
       document.getElementById("fb-root").appendChild(e); 
     }()); 
+
+   $("#fb-box .fb-button").click(function(){
+        if($("#fb-box .fb-button").hasClass("active")) {
+            $("#fb-box .fb-button").removeClass("active");
+            $("#fb-box .fb-page").animate({left: '-303px'});
+        } else {
+            $("#fb-box .fb-button").addClass("active");
+            $("#fb-box .fb-page").animate({left: '0px'});
+        }
+    });  
 });
 
 simpleCart.currency({
@@ -114,18 +124,6 @@ simpleCart({
          cancel: "http://www.haisan69.com/checkout/",
      }
  });
-});
-
-$(document).ready(function(){
-    $("#fb-box .fb-button").click(function(){
-        if($("#fb-box .fb-button").hasClass("active")) {
-            $("#fb-box .fb-button").removeClass("active");
-            $("#fb-box .fb-page").animate({left: '-303px'});
-        } else {
-            $("#fb-box .fb-button").addClass("active");
-            $("#fb-box .fb-page").animate({left: '0px'});
-        }
-    });
 });
 
 $(document).ready(function(){
