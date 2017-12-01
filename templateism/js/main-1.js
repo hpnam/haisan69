@@ -48,9 +48,7 @@ jQuery(document).ready(function($){
     });
 });   
 
-alert("Start");
 jQuery(document).ready(function($){
-	alert("ready");
 	simpleCart.currency({
 	    code: "VND" ,
 	    name: "Việt Nam đồng" ,
@@ -103,7 +101,6 @@ jQuery(document).ready(function($){
 	     }
 	 });
 
-	 alert("OK");
  });
 
 $('h1.title').each(function(){
