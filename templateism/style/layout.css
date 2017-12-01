@@ -1,0 +1,176 @@
+body#layout {
+    width: 99%;
+    float: left;
+    background: #fff;
+    border: 1px solid #d2d2d2;
+}
+
+
+body#layout .section h4 {
+    font-family: open sans;
+    text-transform: uppercase;
+    font-size: 26px;
+    font-weight: 300;
+    padding: 12px 0px;
+}
+
+
+body#layout .locked-widget .widget-content {
+    background: #4e5563;
+    color: #fff;
+    font-family: open sans;
+    font-size: 16px;
+    border: 0;
+}
+
+
+body#layout div.section {
+    background: #00ab6f;
+    color: #fff;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom:20px;
+}
+body#layout div.widget {
+    margin: 0;
+    padding: 0;
+}
+
+body#layout a {
+    text-decoration: none;
+}
+
+body#layout a:hover {
+    color: #fff;
+}
+
+body#layout a:visited {
+    color: #fff;
+}
+
+body#layout .editlink {
+    color: #fff!important;
+}
+
+body#layout .widget-content a {
+    font-size: 16px;
+    background: rgb(50, 61, 84);
+    padding: 4px 18px;
+      text-transform: uppercase;
+      text-decoration:none
+}
+
+
+body#layout #header {
+    float: none;
+    margin: 0;
+}
+
+
+body#layout .margin-1200 {
+    margin: 0;
+    width: auto;
+}
+
+
+body#layout ul.tabs-widget {
+    display: none;
+}
+
+
+body#layout .footer-widget, body#layout .footer-widget.last {
+    width: 225px;
+}
+
+
+
+body#layout #mbl-contact #contact {
+    position: inherit;
+    width: 100%;
+    right: 0;
+}
+
+body#layout .locked-widget .widget-content {
+overflow: visible;padding: 5px 0;}
+
+body#layout div.layout-title {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+body#layout .add_widget {
+    background: #4E5563;
+    border: 1px solid #3F4758;
+    font-family: open sans;
+    margin: 0;
+}
+
+
+body#layout .draggable-widget .widget-content a {
+    font-size: 12px;
+    padding: 3px 5px;
+    
+}
+
+body#layout .draggable-widget .widget-content {
+    background: #4E5563;
+    color: #fff!important;
+    font-family: open sans;
+}
+
+body#layout .paypal:before, 
+body#layout .feature-products:before,
+body#layout .footer:before,
+body#layout .ads:before {
+    font-size: 25px;
+    padding: 14.5px 0;
+    float: left;
+    background: #fca150;
+    color: #fff;
+    font-family: open sans;
+    width: 100%;
+    margin-bottom: 13px;
+    z-index: 100;
+    position: relative;
+}
+
+#layout .paypal:before{
+    content:'Templateism Admin Panel';
+}
+
+body#layout .feature-products:before {
+    content:'Featured Products Tabs';
+}
+
+body#layout .ads:before {
+    content:'Ads Slots Homepage';
+}
+body#layout .footer:before {
+    content:'Footer Widgets';
+    margin: 0
+}
+
+
+body#layout:after {
+    font-size: 14px;
+    padding: 14.5px 0;
+    float: left;
+    background: #fff;
+    color: #555;
+    font-family: open sans;
+    width: 100%;
+    z-index: 100;
+    position: relative;
+    border-top: 1px solid #d2d2d2;
+}
+body#layout:after {
+    content: "Copyrights @ Templateism.com";
+}
+
+body#layout div.layout-widget-description {
+    color: #00AB6F;
+    text-align: center;
+}
