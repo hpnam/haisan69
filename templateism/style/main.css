@@ -2253,13 +2253,13 @@ p.infos {} .contact_billing_templateism h2 {
 /*=====================================
 = Facebook
 =====================================*/
-#fb-box {
+#co-fb-box {
     position: fixed;
     top: 165px;
     z-index: 1000;
     /* opacity: 0.8; */
 }
-#fb-box .fb-page {
+#co-fb-box .fb-page {
     border: solid #4267b2;
     border-width: 3px 3px 3px 0;
     width: 300px;
@@ -2267,7 +2267,7 @@ p.infos {} .contact_billing_templateism h2 {
     position:absolute;
     left: -303px;
 }
-#fb-box .fb-button {
+#co-fb-box .fb-button {
     background-color: #4267b2;
     font-size: 20px;
     padding: 7px 11px 7px 8px;
@@ -2279,16 +2279,16 @@ p.infos {} .contact_billing_templateism h2 {
     color: #fff;
     cursor: pointer;
 }
-#fb-box .fb-button .fa-chevron-left {
+#co-fb-box .fb-button .fa-chevron-left {
     display: none;
 }
-#fb-box .fb-button .fa-facebook {
+#co-fb-box .fb-button .fa-facebook {
     display: inline-block;
 }
-#fb-box .fb-button.active .fa-chevron-left {
+#co-fb-box .fb-button.active .fa-chevron-left {
     display: inline-block;
 }
-#fb-box .fb-button.active .fa-facebook {
+#co-fb-box .fb-button.active .fa-facebook {
     display: none;
 }
 /*=====================================
