@@ -2269,7 +2269,8 @@ p.infos {} .contact_billing_templateism h2 {
 }
 #co-fb-box .button {
     font-size: 12px;
-    padding: 5px;
+    padding: 5px 3px;
+    width: 55px;
     float: right;
     position: absolute;
     z-index: 1000;
