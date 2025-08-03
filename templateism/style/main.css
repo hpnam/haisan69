@@ -2267,10 +2267,9 @@ p.infos {} .contact_billing_templateism h2 {
     position:absolute;
     left: -303px;
 }
-#co-fb-box .fb-button {
-    background-color: #4267b2;
+#co-fb-box .button {
     font-size: 12px;
-    padding: 7px 11px 7px 8px;
+    padding: 5px;
     float: right;
     position: absolute;
     z-index: 1000;
@@ -2278,6 +2277,15 @@ p.infos {} .contact_billing_templateism h2 {
     left: 0;
     color: #fff;
     cursor: pointer;
+}
+#co-fb-box .fb-button {
+    background-color: #4267b2;
+}
+#co-fb-box .zalo-button {
+    background-color: #1484C9;
+}
+#co-fb-box .tiktok-button {
+    background-color: #1B0D18;
 }
 #co-fb-box .fb-button .fa-chevron-left {
     display: none;
