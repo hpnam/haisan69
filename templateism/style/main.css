@@ -2277,6 +2277,7 @@ p.infos {} .contact_billing_templateism h2 {
     left: 0;
     color: #fff;
     cursor: pointer;
+    text-align: right;
 }
 #co-fb-box .fb-button {
     background-color: #4267b2;
