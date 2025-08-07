@@ -2589,7 +2589,7 @@ nav#nav-mobile {
         overflow: hidden;
     }
     #co-fb-box {
-        top: 50px;
+        top: 150px;
     }
 }
 @media screen and (max-width: 810px) {
