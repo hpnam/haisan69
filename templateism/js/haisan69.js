@@ -211,7 +211,7 @@ $(document).ready(function(){
         $("#co-form-email").val(data_email);
         $("#co-form-message").val(emailBody);
         $("#co-form-submit").click();
-        window.location.replace("http://www.haisan69.com/thanks/");
+        //window.location.replace("http://www.haisan69.com/thanks/");
     });
 });
     var _0x8898=["/thanks","indexOf","href","location","title","Thanks","<div class='contact_billing_templateism'><h2>ĐẶT HÀNG THÀNH CÔNG!</h2><p class='infos'>Cám ơn quý khách đã ủng hộ, chúng tôi sẽ sớm liên hệ lại theo số điện thoại quý khách đã cung cấp để xác nhận đơn hàng.</p><p><a href='/'>Về trang chủ</a></p></div>","html","#main-wrapper"];
