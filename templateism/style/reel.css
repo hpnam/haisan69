@@ -7,7 +7,6 @@
   --radius:16px;
   --shadow:0 10px 30px rgba(0,0,0,.25);
 }
-/* Reset minimal for widget context */
 .hs69-overlay, .hs69-modal, .hs69-viewport, .hs69-slides, .hs69-slide,
 .hs69-media, .hs69-card, .hs69-header, .hs69-dots, .hs69-tapzone {
   box-sizing: border-box;
@@ -23,7 +22,7 @@
 .hs69-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);display:none;z-index:9998}
 .hs69-modal{position:fixed;inset:0;display:none;z-index:9999}
 .hs69-modal.open,.hs69-overlay.open{display:block}
-.hs69-viewport{position:absolute;inset:0;background:var(--hs69-bg);color:var(--hs69-text);overflow:hidden}
+.hs69-viewport{position:absolute;inset:0;background:var(--hs69-bg);color:var(--hs69-text);overflow:hidden;touch-action:none}
 .hs69-header{position:absolute;top:10px;left:10px;right:10px;z-index:10;display:flex;justify-content:space-between;align-items:center}
 .hs69-chip{background:rgba(255,255,255,.12);padding:6px 10px;border-radius:999px;font-size:12px}
 .hs69-close{background:rgba(0,0,0,.5);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);color:#fff;
