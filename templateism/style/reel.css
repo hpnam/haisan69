@@ -1,52 +1,88 @@
-:root{
-  --hs69-primary:#0ea5e9;
-  --hs69-accent:#ef4444;
-  --hs69-bg:#0b1220;
-  --hs69-text:#f8fafc;
-  --hs69-muted:#94a3b8;
-  --radius:16px;
-  --shadow:0 10px 30px rgba(0,0,0,.25);
+/* ===== REEL LƯỚT DỌC KIỂU TIKTOK =====
+   Áp dụng scroll-snap cho container danh sách bài.
+   Nếu template Blogger của bạn bao các post trong .blog-posts hoặc #Blog1,
+   JS ở dưới sẽ tự gắn class .hs69-reel vào container đó.
+*/
+.hs69-reel{
+  height:100svh;               /* full chiều cao màn hình, safe viewport units */
+  overflow-y:auto;
+  scroll-snap-type:y mandatory;
+  -webkit-overflow-scrolling: touch;
+  background:#fff;
 }
-.hs69-overlay, .hs69-modal, .hs69-viewport, .hs69-slides, .hs69-slide,
-.hs69-media, .hs69-card, .hs69-header, .hs69-dots, .hs69-tapzone {
-  box-sizing: border-box;
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+
+/* Mỗi bài là 1 "slide" cao tối thiểu full màn */
+.hs69-reel .postdata{
+  scroll-snap-align:start;
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
 }
-.hs69-launcher{
-  position:fixed;right:14px;bottom:14px;z-index:50;
-  background:var(--hs69-primary);color:#fff;border:none;outline:0;
-  padding:12px 14px;border-radius:999px;display:flex;gap:8px;align-items:center;
-  box-shadow:var(--shadow);font-weight:700;font-size:14px;cursor:pointer;
+
+/* ===== CARD SẢN PHẨM: ảnh trên / info / CTA dưới ===== */
+.postdata{
+  gap:12px;
+  padding:12px;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  background:#fff;
+  box-sizing:border-box;
 }
-.hs69-launcher svg{width:18px;height:18px}
-.hs69-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);display:none;z-index:9998}
-.hs69-modal{position:fixed;inset:0;display:none;z-index:9999}
-.hs69-modal.open,.hs69-overlay.open{display:block}
-.hs69-viewport{position:absolute;inset:0;background:var(--hs69-bg);color:var(--hs69-text);overflow:hidden;touch-action:none}
-.hs69-header{position:absolute;top:10px;left:10px;right:10px;z-index:10;display:flex;justify-content:space-between;align-items:center}
-.hs69-chip{background:rgba(255,255,255,.12);padding:6px 10px;border-radius:999px;font-size:12px}
-.hs69-close{background:rgba(0,0,0,.5);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);color:#fff;
-  width:36px;height:36px;border-radius:999px;display:grid;place-items:center;cursor:pointer}
-.hs69-slides{position:absolute;inset:0;will-change:transform;transition:transform .35s ease}
-.hs69-slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:stretch;padding:16px}
-.hs69-media{position:absolute;inset:0;background:#000}
-.hs69-media img,.hs69-media video{width:100%;height:100%;object-fit:cover}
-.hs69-card{position:relative;margin-top:auto;background:linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,.75) 38%, rgba(11,18,32,.95) 100%);
-  border-radius:var(--radius);padding:16px 14px 12px;color:var(--hs69-text)}
-.hs69-title{font-size:18px;font-weight:800;margin:0 0 6px}
-.hs69-meta{font-size:12px;color:var(--hs69-muted);display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
-.hs69-badges{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
-.hs69-badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:4px 8px;border-radius:999px;font-size:11px}
-.hs69-desc{font-size:14px;line-height:1.4;color:#e5e7eb;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.hs69-cta{display:flex;gap:8px;margin-top:12px}
-.hs69-btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 10px;border-radius:12px;border:1px solid rgba(255,255,255,.15);
-  color:#fff;background:rgba(255,255,255,.08);font-weight:700;text-decoration:none}
-.hs69-btn.primary{background:var(--hs69-accent);border-color:transparent}
-.hs69-dots{position:absolute;right:10px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px}
-.hs69-dot{width:6px;height:6px;background:rgba(255,255,255,.35);border-radius:999px}
-.hs69-dot.active{background:#fff;height:18px}
-.hs69-tapzone{position:absolute;left:0;right:0;height:40%}
-.hs69-tapzone.top{top:0}
-.hs69-tapzone.bottom{bottom:0}
-.safe-bottom{height:calc(env(safe-area-inset-bottom, 12px))}
-@media(min-width:768px){.hs69-launcher{bottom:20px;right:20px}.hs69-title{font-size:20px}}
+
+/* Ảnh: vừa vặn, không méo; khung tỷ lệ 4:3 (đổi thành 1/1 nếu muốn vuông) */
+.item_image{ width:100%; }
+.item_img{
+  width:100%;
+  aspect-ratio: 4 / 3;
+  background:#0b1220;
+  border-radius:10px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.item_thumb{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:#0b1220;
+}
+
+/* Thông tin */
+.postmeta-primary{ display:flex; flex-direction:column; gap:8px; }
+.postmeta-primary .item_name{ font-size:20px; font-weight:800; line-height:1.25; margin:0; }
+.postmeta-primary .item_name a{ color:inherit; text-decoration:none; }
+.thecomments{ font-size:13px; color:#6b7280; }
+
+/* Labels / giữ nguyên cho hệ thống giá đọc */
+.price_remove{ display:flex; flex-wrap:wrap; gap:6px; }
+.price_remove .label_remove{
+  font-size:12px; padding:4px 8px; border-radius:999px;
+  background:#f3f4f6; color:#374151; border:1px solid #e5e7eb;
+}
+
+/* Intro */
+#item-description{ display:block; color:#374151; font-size:14px; line-height:1.6; }
+
+/* CTA luôn ở đáy khung bài */
+.Phead-right{
+  margin-top:auto;             /* đẩy CTA xuống đáy slide */
+  display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:flex-start;
+}
+.item_add,.continues{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:10px 14px; border-radius:10px; border:1px solid #e5e7eb;
+  background:#f9fafb; color:#111827; text-decoration:none; font-weight:700;
+}
+.item_add{ background:#ef4444; border-color:#ef4444; color:#fff; }
+.item_add:hover{ filter:brightness(0.95); }
+.continues:hover{ background:#f3f4f6; }
+
+.fb-like-share{ margin-left:auto; min-width:160px; display:flex; justify-content:flex-end; }
+
+/* Responsive nhỏ */
+@media (max-width: 480px){
+  .postmeta-primary .item_name{ font-size:18px; }
+  .fb-like-share{ width:100%; justify-content:flex-start; margin-left:0; }
+}
